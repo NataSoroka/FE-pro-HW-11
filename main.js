@@ -32,12 +32,10 @@ window.onload = function() {
         Str += arr[i] + " ";
     }
 
-    console.log(unicStr);
-
 
     for (var k = 0; k < arr.length; k++) {
         var elem = Str.indexOf(arr[k]);
-        if (unicStr.indexOf(arr[k], elem + 1) == -1) {
+        if (Str.indexOf(arr[k], elem + 1) == -1) {
             unicArr.push(arr[k]);
         }
     }
