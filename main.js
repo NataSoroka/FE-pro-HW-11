@@ -20,25 +20,22 @@ window.onload = function() {
 
     var elements = document.querySelectorAll("body>*");
     var arr = [];
-    var unicArr = [];
-    var Str = ""
 
     for (var j = 0; j < elements.length; j++) {
         arr.push(elements[j].getAttribute('class'));
     }
 
+    var obj = {};
 
-    for (var i = 0; i < arr.length; i++) {
-        Str += arr[i] + " ";
+    for (word of arr)
+        obj[word] = obj[word] + 1 || 1;
+
+    var result = [];
+    for (word of arr) {
+        if (obj[word] === 1)
+            result.push(word);
     }
+    console.log(arr);
 
-
-    for (var k = 0; k < arr.length; k++) {
-        var elem = Str.indexOf(arr[k]);
-        if (Str.indexOf(arr[k], elem + 1) == -1) {
-            unicArr.push(arr[k]);
-        }
-    }
-
-    console.log(unicArr);
+    console.log(result);
 }
