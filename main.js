@@ -2,17 +2,16 @@ window.onload = function() {
 
     //////////////// FIRST TASK ////////////////////
 
-    var colors = ["yellow", "blue", "black", "red", "green", "gray", "maroon", "silver", "orange", "olive", "lime", "aqua", "navy", "teal", "fuchsia", "purple"];
     var blocks = document.querySelectorAll('.color');
 
     function rand() {
-        return Math.floor(Math.random() * 16);
+        return Math.floor(Math.random() * 255);
     }
 
 
     var setColor = setInterval(function() {
         for (var i = 0; i < blocks.length; i++) {
-            blocks[i].style.backgroundColor = colors[rand()];
+            blocks[i].style.backgroundColor = "rgb(" + rand() + "," + rand() + "," + rand() + ")";
         }
     }, 2000);
 
